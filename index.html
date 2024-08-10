@@ -59,7 +59,7 @@
     </div>
     <div class="btn-container">
     <input type="text" placeholder="Add a new task" id="inp">
-    <button id="addbtn">Add task</button>
+    <button id="addbtn" onclick="add()">Add task</button>
     </div>
     
 </body>
@@ -79,7 +79,15 @@
         `;
         }   }
     function add(){
-        newt = document.get
+        newt = document.getElementById("inp")
+        newtask =newt.value
+        if(!newtask){
+            alert("please enter a task")
+        }
+        else{
+        taskarr.unshift(newtask)
+        load();
+        newt.value= "" ;}
     }
         load();
 </script>
