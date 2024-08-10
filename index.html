@@ -26,7 +26,7 @@
             
         }
         .delbtn{
-            
+            cursor: pointer;
             border-radius: 2px;
             height: 20px;
            margin: 5px 20px;
@@ -55,7 +55,6 @@
 <body>
     <h1>To Do App</h1>
     <div class="main-container" id="main-container">
-       hi
     </div>
     <div class="btn-container">
     <input type="text" placeholder="Add a new task" id="inp">
@@ -64,8 +63,9 @@
     
 </body>
 <script>
-    taskarr=["hit the gym","eat"]
+    taskarr=[]
     function load(){
+        localStorage.setItem("taskarray", JSON.stringify(taskarr));
         maindiv = document.getElementById("main-container")
         maindiv.innerHTML= "";
         for (const task of taskarr) {
@@ -94,7 +94,16 @@
         taskarr.splice(ind,1);
         load();
     }
-        load();
+    function loadFromLocalStorage() {
+  const allTasks = JSON.parse(localStorage.getItem("taskarray"));
+
+  if (allTasks) {
+    taskarr.push(...allTasks);
+  }
+
+  load();
+}
+loadFromLocalStorage();
 </script>
 
 </html>
