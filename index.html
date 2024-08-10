@@ -17,6 +17,20 @@
             border-radius: 20px;
             padding: 20px;
         }
+        .item{
+            height: 30px;
+            background-color: blueviolet;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 5px;
+            
+        }
+        .delbtn{
+            
+            border-radius: 2px;
+            height: 20px;
+           margin: 5px 20px;
+        }
     </style>
 </head>
 <body>
@@ -34,7 +48,7 @@
           maindiv.innerHTML+=`
         <div class="item">
           ${task}
-          <button class="btn-del" type="button" onclick="deleteTask('${task}')">
+          <button class="delbtn" type="button" onclick="deleteTask('${task}')">
             Delete
           </button>
         </div>
