@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do / notes app</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .main-container{
+            height: 500px;
+            width: 600px;
+            background-color: aqua;
+            margin: 20px auto;
+            border-radius: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do App</h1>
+    <div class="main-container" id="main-container">
+       hi
+    </div>
+</body>
+<script>
+    taskarr=["hit the gym","eat"]
+    function load(){
+        maindiv = document.getElementById("main-container")
+        maindiv.innerHTML= "";
+        for (const task of taskarr) {
+          maindiv.innerHTML+=`
+        <div class="item">
+          ${task}
+          <button class="btn-del" type="button" onclick="deleteTask('${task}')">
+            Delete
+          </button>
+        </div>
+        `;
+        }   }
+        load();
+</script>
+
+</html>
