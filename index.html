@@ -89,6 +89,11 @@
         load();
         newt.value= "" ;}
     }
+    function deleteTask(task){
+        const ind = taskarr.indexOf(task);
+        taskarr.splice(ind,1);
+        load();
+    }
         load();
 </script>
 
